@@ -122,12 +122,13 @@ int main( int argc, char *argv[] )
   client = tcp_active_open( server_port, server_ip );
   
  
-   int i=LOOPS;
+  
    signal(SIGINT, my_handler);
   
   
   while(running) 
   {
+    int i=LOOPS;
     temperature = temperature + TEMP_DEV * ((drand48() - 0.5)/10); 
     time(&timestamp);
     // send data to server in this order (!!): <sensor_id><temperature><timestamp>
@@ -140,7 +141,7 @@ int main( int argc, char *argv[] )
     UPDATE(i);
   }
   
-  i = 0;
+
   
   tcp_close( &client );
   

@@ -1,4 +1,4 @@
-EXE = sensor_gateway.exe
+EXE = sensor_gateway
 OBJS = main.o Storagemgr.o Datamgr.o Logmgr.o tcpsocket.o myqueue.o liblist.so
 CC =  gcc -std=c99
 CCL = gcc -std=c99 -L. -Wl,-rpath=.
@@ -32,6 +32,9 @@ tcpsocket.o:tcpsocket.c
 	
 myqueue.o:myqueue.c 
 	$(CC) $(CFLAGS) myqueue.c
+	
+sensor_node:sensor_node.c
+	$(CC) sensor_node.c tcpsocket.c -o sensor_node
 	
 clean:
 	rm *.o $(EXE)
