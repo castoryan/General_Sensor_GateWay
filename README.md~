@@ -26,14 +26,16 @@ For those who is not familiar with mysql server, please go to: https://www.linod
 
 ##Compiling:
 
-For running this code:</br>
 1. compile the sensor_node.c file.</br>
 the comment is: *make sensor_node*</br>
+
 2. make the main project via makefile</br>
+
 3. run different sensor nodes in different terminals. </br>
 the comment is: *./sensor_node sensor_id time_interval_of_sending_signal host_ip_address host_port_number*</br>
 for example: *./sensor_node 4 2 127.0.0.1 1234* </br>
 means: make a sensor node that id is 4, sending signal every 2 seconds, the ip address of target sensor gateway is 127.0.0.1, port number is 1234.  </br>
+
 4. run the main program in a new terminal. </br>
 the comment is as simple as *./sensor_gateway*</br>
 
